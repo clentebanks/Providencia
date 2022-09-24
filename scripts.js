@@ -1,85 +1,88 @@
-var hidWidth;
-var scrollBarWidths = 40;
+import searchFilters from "./filtroBusqueda";
+/**script para scroll de flechas */
+// var hidWidth;
+// var scrollBarWidths = 40;
 
-var widthOfList = function() {
-    var itemsWidth = 0;
-    $('.list a').each(function() {
-        var itemWidth = $(this).outerWidth();
-        itemsWidth += itemWidth;
-    });
-    return itemsWidth;
-};
+// var widthOfList = function() {
+//     var itemsWidth = 0;
+//     $('.list a').each(function() {
+//         var itemWidth = $(this).outerWidth();
+//         itemsWidth += itemWidth;
+//     });
+//     return itemsWidth;
+// };
 
-var widthOfHidden = function(){
-    var ww = 0 - $('.wrapper-nav').outerWidth();
+// var widthOfHidden = function(){
+//     var ww = 0 - $('.wrapper-nav').outerWidth();
 
-    var hw = (($('.wrapper-nav').outerWidth()) - widthOfList() - getLeftPosi()) - scrollBarWidths;
+//     var hw = (($('.wrapper-nav').outerWidth()) - widthOfList() - getLeftPosi()) - scrollBarWidths;
 
-    var rp = $(document).width() - ($('.nav-item.nav-link').last().offset().left + $('.nav-item.nav-link').last().outerWidth());
+//     var rp = $(document).width() - ($('.nav-item.nav-link').last().offset().left + $('.nav-item.nav-link').last().outerWidth());
 
-    if (ww > hw) {
-        //return ww;
-        return (rp > ww ? rp : ww);
-    }
-    else {
-        //return hw;
-        return (rp > hw ? rp : hw);
-    }
-};
+//     if (ww > hw) {
+//         //return ww;
+//         return (rp > ww ? rp : ww);
+//     }
+//     else {
+//         //return hw;
+//         return (rp > hw ? rp : hw);
+//     }
+// };
 
-var getLeftPosi = function(){
+// var getLeftPosi = function(){
     
-    var ww = 0 - $('.wrapper-nav').outerWidth();
-    var lp = $('.list').position().left;
+//     var ww = 0 - $('.wrapper-nav').outerWidth();
+//     var lp = $('.list').position().left;
     
-    if (ww > lp) {
-        return ww;
-    }
-    else {
-        return lp;
-    }
-};
+//     if (ww > lp) {
+//         return ww;
+//     }
+//     else {
+//         return lp;
+//     }
+// };
 
-var reAdjust = function(){
-    // check right pos of last nav item
-    var rp = $(document).width() - ($('.nav-item.nav-link').last().offset().left + $('.nav-item.nav-link').last().outerWidth());
+// var reAdjust = function(){
+//     // check right pos of last nav item
+//     var rp = $(document).width() - ($('.nav-item.nav-link').last().offset().left + $('.nav-item.nav-link').last().outerWidth());
 
-    if (($('.wrapper-nav').outerWidth()) < widthOfList() && (rp < 0)) {
-        $('.scroller-right').show().css('display', 'flex');
-    }
-    else {
-        $('.scroller-right').hide();
-    }
+//     if (($('.wrapper-nav').outerWidth()) < widthOfList() && (rp < 0)) {
+//         $('.scroller-right').show().css('display', 'flex');
+//     }
+//     else {
+//         $('.scroller-right').hide();
+//     }
     
-    if (getLeftPosi() < 0) {
-        $('.scroller-left').show().css('display', 'flex');
-    }
-    else {
-        $('.scroller-left').hide();
-    }
-}
+//     if (getLeftPosi() < 0) {
+//         $('.scroller-left').show().css('display', 'flex');
+//     }
+//     else {
+//         $('.scroller-left').hide();
+//     }
+// }
 
-reAdjust();
+// reAdjust();
 
-$(window).on('resize',function(e){
-    reAdjust();
-});
+// $(window).on('resize',function(e){
+//     reAdjust();
+// });
 
-$('.scroller-right').click(function() {
-    $('.scroller-left').fadeIn('slow');
-    $('.scroller-right').fadeOut('slow');
+// $('.scroller-right').click(function() {
+//     $('.scroller-left').fadeIn('slow');
+//     $('.scroller-right').fadeOut('slow');
 
-    $('.list').animate({ left: `+=${widthOfHidden()}px` }, 'slow', function() {
-        reAdjust();
-    });
-});
+//     $('.list').animate({ left: `+=${widthOfHidden()}px` }, 'slow', function() {
+//         reAdjust();
+//     });
+// });
 
-$('.scroller-left').click(function() {
+// $('.scroller-left').click(function() {
 
-    $('.scroller-right').fadeIn('slow');
-    $('.scroller-left').fadeOut('slow');
+//     $('.scroller-right').fadeIn('slow');
+//     $('.scroller-left').fadeOut('slow');
 
-    $('.list').animate({ left: `-=${getLeftPosi()}px` }, 'slow', function() {
-        reAdjust();
-    });
-});
+//     $('.list').animate({ left: `-=${getLeftPosi()}px` }, 'slow', function() {
+//         reAdjust();
+//     });
+// });
+
