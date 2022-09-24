@@ -1,0 +1,69 @@
+ /* Works on Chrome, Edge, and Safari */
+ .scrollmenu::-webkit-scrollbar {
+  height: 10px;
+  
+}
+
+
+.scrollmenu::-webkit-scrollbar-thumb {
+  background-color:#c8b628;
+  border-radius: 10px;       /* roundness of the scroll thumb */
+  border: 1px solid #c8b628;  /* creates padding around scroll thumb */
+}
+div.scrollmenu {
+  overflow: hidden;
+  white-space: nowrap;
+  
+}
+div.scrollmenu:hover{
+  overflow-x: scroll;
+}
+
+div.scrollmenu li {
+  display: inline-block !important;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+.iframes {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
+/****************estilos para iframes*******************/
+/* Works on Chrome, Edge, and Safari */
+  .iframes {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  }
+  
+  .responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  li a{
+    text-decoration: none;
+  }
